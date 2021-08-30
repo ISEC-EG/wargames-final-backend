@@ -59,6 +59,10 @@ const signupSchema = {
   secret: joi.string()
     .required()
     .trim(),
+
+  country: joi.string()
+    .required()
+    .trim(),
 };
 
 const loginSchema = {

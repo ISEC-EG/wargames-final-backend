@@ -5,8 +5,8 @@ const Security = require("./../security");
 const Error404 = (req, res, next) => {
   if (Config.canUseCustomErrorPages || true) {
     // Handle 404
-    res.status(404).json({ title: "404: File Not Found" });
     Security.log404(req);
+    res.status(404).json({ title: "404: File Not Found" });
   }
 };
 

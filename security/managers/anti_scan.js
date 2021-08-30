@@ -7,7 +7,10 @@ const requestIp = require("request-ip");
 
 const client = redis.createClient({
   host: Config.RedisHost,
-  port: Config.RedisPort
+  port: Config.RedisPort,
+  // port: 18072,
+  // password: "kpoKVAW1WrR2ZgC66AMr6LMgaU0p4Eco",
+  // host: "redis-18072.c44.us-east-1-2.ec2.cloud.redislabs.com"
 });
 
 client.on("error", function (err) {
@@ -31,7 +34,6 @@ module.exports = {
 
     // request monit
     client.hgetall(ipToMonit, function (err, object) {
-      // console.log(object);
       if (err) console.log(err);
 
       if (object) {

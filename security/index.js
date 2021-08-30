@@ -71,7 +71,7 @@ module.exports = {
       next();
     });
   },
-  log404: preventAbuseFunction(antiScanManager.log404, { next: false }),
+  log404: antiScanManager.log404,
   preventBlocked: preventAbuseFunction(antiScanManager.preventBlocked),
   async buildTicket(user) {
     let userSessionData = await sessionManager.login(user);

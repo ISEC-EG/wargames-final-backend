@@ -13,6 +13,7 @@ const Team = new mongoose.Schema(
     userID: { type: String, unique: true, default: "" },
     score: { type: Number, default: 0 },
     password: { type: String, required: true },
+    country: { type: String, default: '' },
     isVerified: { type: Boolean, default: false },
     challengesHints: [],
     members: [{ name: { type: String }, email: { type: String } }],
