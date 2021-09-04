@@ -22,11 +22,11 @@ async function submitFlag(req, res) {
 
 		let team = await Team.findById(req.userData._id)
 		if (!team)
-			return res.status(401).json({ error: 'Unauthorized Team not found' })
+			return res.status(401).json({ message: 'Unauthorized Team not found' })
 
 		let challenge = await Challenge.findById(req.params.challengeId)
 		if (!challenge)
-			return res.status(429).json({ error: 'Challenge not found' })
+			return res.status(429).json({ message: 'Challenge not found' })
 
 		let solved = await Solution.findOne({
 			challenge: mongoose.Types.ObjectId(req.params.challengeId),
