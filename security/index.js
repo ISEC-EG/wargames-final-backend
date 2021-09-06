@@ -80,6 +80,7 @@ module.exports = {
       _id: user._id,
       role: user.role,
       u_id: user.userID,
+      // hi: 'Kos-omk'
     };
     return ticketManager.sign(userSessionData);
   },
